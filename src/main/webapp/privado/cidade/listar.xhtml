@@ -15,6 +15,11 @@
                                  update="formEdicao"
                                  process="@this"
                                  oncomplete="PF('dlg').show();"/>
+                <p:commandButton value="Imprimir Cidades"
+                                 icon="pi pi-print"
+                                 action="#{controleCidade.imprimirCidades()}"
+                                 ajax="false"
+                                 onclick="this.form.target = '_blank';"/>                
                 <p:dataTable value="#{controleCidade.dao.listaObjetos}" var="obj"
                              id="listagem"  >
                     <p:column headerText="ID" >

@@ -5,7 +5,9 @@ import br.edu.ifsul.dao.EstadoDAO;
 import br.edu.ifsul.modelo.Cidade;
 import br.edu.ifsul.modelo.Estado;
 import br.edu.ifsul.util.Util;
+import br.edu.ifsul.util.UtilRelatorios;
 import java.io.Serializable;
+import java.util.HashMap;
 import javax.ejb.EJB;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
@@ -29,6 +31,11 @@ public class ControleCidade implements Serializable {
     public ControleCidade() {
 
     }
+    
+    public void imprimirCidades() {
+        HashMap parametros = new HashMap();
+        UtilRelatorios.imprimeRelatorio("relatorioCidades", parametros, dao.getListaTodos());
+    }    
 
     public String listar() {
         return "/privado/cidade/listar?faces-redirect=true";
