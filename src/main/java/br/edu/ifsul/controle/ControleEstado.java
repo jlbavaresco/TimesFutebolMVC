@@ -46,7 +46,7 @@ public class ControleEstado implements Serializable {
     public void excluir(Object id) {
         try {
             objeto = dao.getObjectById(id);
-            dao.remover(objeto);
+            dao.remove(objeto);
             Util.mensagemInformacao("Objeto removido com sucesso!");
         } catch (Exception e) {
             Util.mensagemErro("Erro ao remover objeto: "
